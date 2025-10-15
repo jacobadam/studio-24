@@ -1,10 +1,12 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 interface ButtonProps {
   children: string;
   variant?: keyof typeof variants;
+  href?: string;
   onClick?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -19,8 +21,13 @@ export default function Button({
   children,
   variant = "primary",
   onClick,
+  href,
 }: ButtonProps) {
-  return (
+  return href ? (
+    <Link href={href} className={`${styles} ${variants[variant]}`}>
+      {children}
+    </Link>
+  ) : (
     <button
       onClick={onClick}
       type="button"
