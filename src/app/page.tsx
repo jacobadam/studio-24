@@ -9,7 +9,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-screen w-full px-3 pt-16 bg-primary">
+    <div className="relative min-h-screen w-full px-3 pt-20 bg-primary">
       <section className="flex flex-col md:flex-row items-center justify-between py-8 md:py-16">
         <div className="flex-1 px-8">
           <h1 className="text-secondary-dark font-bold text-5xl leading-tight my-4 pr-0 md:pr-5 max-sm:break-all text-center md:text-left">
@@ -34,8 +34,8 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="flex-1 flex flex-col md:flex-row items-center md:items-center justify-center gap-6 pt-8 md:pt-0">
-          <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-1 flex flex-col md:flex-row items-center md:items-center justify-center gap-6 py-8 md:pt-0 px-8">
+          <div className="flex md:flex-row items-center gap-6">
             <div className="flex flex-col gap-4">
               <Image
                 src="/salon-tools.webp"
@@ -52,14 +52,15 @@ export default function Home() {
                 className="object-cover rounded-3xl"
               />
             </div>
-
-            <Image
-              src="/salon-chair.webp"
-              height={400}
-              width={250}
-              alt="Salon tools"
-              className="object-cover rounded-3xl"
-            />
+            <div className="flex flex-row gap-4">
+              <Image
+                src="/salon-chair.webp"
+                height={400}
+                width={250}
+                alt="Salon tools"
+                className="object-cover rounded-3xl"
+              />
+            </div>
           </div>
         </div>
       </section>
