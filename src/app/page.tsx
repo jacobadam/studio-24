@@ -9,7 +9,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-screen w-full px-3 pt-20 bg-primary">
+    <div className="relative min-h-screen w-full px-3 pt-16 bg-primary">
       <section className="flex flex-col md:flex-row items-center justify-between py-8 md:py-16">
         <div className="flex-1 px-8">
           <h1 className="text-secondary-dark font-bold text-5xl leading-tight my-4 pr-0 md:pr-5 max-sm:break-all text-center md:text-left">
@@ -48,6 +48,7 @@ export default function Home() {
                 src="/hero-image.webp"
                 height={120}
                 width={400}
+                priority
                 alt="Salon chair"
                 className="object-cover rounded-3xl"
               />
