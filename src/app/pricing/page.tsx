@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function About() {
-  return <div>Pricing</div>;
+export default function Pricing() {
+  return <h1 className="pt-16">Pricing</h1>;
 }
