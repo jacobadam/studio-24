@@ -1,70 +1,38 @@
 "use client";
 
-import Image from "next/image";
-import Button from "./components/ui/Button/Button";
+import HeroSection from "./components/ui/HeroSection/HeroSection";
 
-export default function Home() {
-  const clickButton = () => {
-    console.log("hit");
-  };
-
+export default function HomePage() {
   return (
-    <div className="relative min-h-screen w-full px-3 pt-16 bg-primary">
-      <section className="flex flex-col md:flex-row items-center justify-between py-8 md:py-16">
-        <div className="flex-1 px-8">
-          <h1 className="text-secondary-dark font-bold text-5xl leading-tight my-4 pr-0 md:pr-5 max-sm:break-all text-center md:text-left">
-            Lorem ipsum dolor sit amet, consectetur.
-          </h1>
-          <p className="text-secondary text-m font-normal mb-8 text-center md:text-left">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-            porttitor libero vitae vestibulum tristique. Vivamus ac imperdiet
-            erat. Suspendisse ultricies enim eu nunc rutrum, et luctus sapien
-            auctor. Nulla nibh orci, mattis ac porttitor mollis, ullamcorper.
-          </p>
-          <div className="flex flex-col md:flex-row gap-4">
-            <Button
-              variant="secondary"
-              onClick={clickButton}
-              children={"Book Now"}
-            />
-            <Button
-              variant="secondary"
-              href="treatments"
-              children={"Explore Our Treatments"}
-            />
-          </div>
-        </div>
-        <div className="flex-1 flex flex-col md:flex-row items-center md:items-center justify-center gap-6 py-8 md:pt-0 px-8">
-          <div className="flex md:flex-row items-center gap-6">
-            <div className="flex flex-col gap-4">
-              <Image
-                src="/salon-tools.webp"
-                height={120}
-                width={400}
-                alt="Haircut"
-                className="object-cover rounded-3xl"
-              />
-              <Image
-                src="/hero-image.webp"
-                height={120}
-                width={400}
-                priority
-                alt="Salon chair"
-                className="object-cover rounded-3xl"
-              />
-            </div>
-            <div className="flex flex-row gap-4">
-              <Image
-                src="/salon-chair.webp"
-                height={400}
-                width={250}
-                alt="Salon tools"
-                className="object-cover rounded-3xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+    <main className="bg-yellow-50 mt-16">
+      <HeroSection
+        heading="Lorem ipsum dolor sit amet."
+        subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sagittis."
+        src="/hero-image.webp"
+      ></HeroSection>
+      <HeroSection
+        heading="Lorem ipsum dolor sit amet."
+        subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sagittis."
+        src="/salon-tools.webp"
+      ></HeroSection>
+      <HeroSection
+        src="/salon-chair.webp"
+        heading="Lorem ipsum dolor sit amet."
+        text=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+        blanditiis soluta eius quam modi aliquam quaerat odit deleniti minima
+        maiores voluptate est ut saepe accusantium maxime doloremque nulla
+        consectetur possimus.
+        
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+        blanditiis soluta eius quam modi aliquam quaerat odit deleniti minima
+        maiores voluptate est ut saepe accusantium maxime doloremque nulla
+        consectetur possimus.
+        
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+        blanditiis soluta eius quam modi aliquam quaerat odit deleniti minima
+        maiores voluptate est ut saepe accusantium maxime doloremque nulla
+        consectetur possimus."
+      ></HeroSection>
+    </main>
   );
 }
