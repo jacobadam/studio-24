@@ -6,32 +6,23 @@ export default function HomePage() {
   return (
     <main className="bg-yellow-50 mt-16">
       <HeroSection
+        src="/hero-image.webp"
         heading="Lorem ipsum dolor sit amet."
         subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sagittis."
-        src="/hero-image.webp"
       ></HeroSection>
       <HeroSection
+        src="/salon-tools.webp"
         heading="Lorem ipsum dolor sit amet."
         subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sagittis."
-        src="/salon-tools.webp"
       ></HeroSection>
       <HeroSection
         src="/salon-chair.webp"
         heading="Lorem ipsum dolor sit amet."
-        text=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-        blanditiis soluta eius quam modi aliquam quaerat odit deleniti minima
-        maiores voluptate est ut saepe accusantium maxime doloremque nulla
-        consectetur possimus.
-        
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-        blanditiis soluta eius quam modi aliquam quaerat odit deleniti minima
-        maiores voluptate est ut saepe accusantium maxime doloremque nulla
-        consectetur possimus.
-        
-         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-        blanditiis soluta eius quam modi aliquam quaerat odit deleniti minima
-        maiores voluptate est ut saepe accusantium maxime doloremque nulla
-        consectetur possimus."
+        text={[
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vehicula rutrum cursus. Fusce faucibus mi id hendrerit auctor. Morbi vestibulum.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vehicula rutrum cursus. Fusce faucibus mi id hendrerit auctor. Morbi vestibulum.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vehicula rutrum cursus. Fusce faucibus mi id hendrerit auctor. Morbi vestibulum.",
+        ]}
       ></HeroSection>
     </main>
   );
