@@ -8,12 +8,7 @@ interface HeroProps {
   text?: string[];
 }
 
-export default function HeroSection({
-  src,
-  subheading,
-  heading,
-  text,
-}: HeroProps) {
+export const HeroSection = ({ src, subheading, heading, text }: HeroProps) => {
   return (
     <main>
       <div className="relative h-[150vh]">
@@ -22,4 +17,4 @@ export default function HeroSection({
       </div>
     </main>
   );
-}
+};
