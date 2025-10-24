@@ -1,6 +1,6 @@
 "use client";
 
-import HeroSection from "./components/ui/HeroSection/HeroSection";
+import { HeroSection } from "./components/ui/HeroSection/HeroSection";
 
 export default function HomePage() {
   return (
