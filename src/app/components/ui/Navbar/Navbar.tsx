@@ -1,10 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import Button from "../Button/Button";
 import Link from "next/link";
 
-export default function Navbar() {
+import { Button } from "../Button/Button";
+
+interface NavBarProps {
+  links?: { label: string; href: string }[];
+}
+
+export const NavBar = ({ links }: NavBarProps) => {
   const clickButton = () => {
     console.log("hit");
   };
@@ -33,47 +38,18 @@ export default function Navbar() {
 
         <nav className="items-center justify-between hidden w-full md:flex md:w-auto">
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-secondary-dark rounded-lg md:flex-row md:mt-0 md:border-0 gap-4">
-            <li>
-              <Link
-                href="/"
-                className="block py-2 px-3 text-primary rounded-sm md:bg-transparent md:p-0"
-                aria-current="page"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about"
-                className="block py-2 px-3 text-primary rounded-sm hover:bg-secondary-dark md:hover:bg-transparent md:hover:text-highlight md:p-0"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/treatments"
-                className="block py-2 px-3 text-primary rounded-sm hover:bg-secondary-dark md:hover:bg-transparent md:hover:text-highlight md:p-0"
-              >
-                Treatments
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/pricing"
-                className="block py-2 px-3 text-primary rounded-sm hover:bg-secondary-dark md:hover:bg-transparent md:hover:text-highlight md:p-0"
-              >
-                Pricing
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="block py-2 px-3 text-primary rounded-sm hover:bg-secondary-dark md:hover:bg-transparent md:hover:text-highlight md:p-0"
-              >
-                Contact Us
-              </Link>
-            </li>
+            {links?.map((link, i) => (
+              <li>
+                <Link
+                  key={i}
+                  href={link.href}
+                  className="block py-2 px-3 text-primary rounded-sm md:bg-transparent md:p-0"
+                  aria-current="page"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
 
@@ -107,4 +83,4 @@ export default function Navbar() {
       </div>
     </header>
   );
-}
+};
