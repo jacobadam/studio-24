@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Navbar } from "./components/ui/Navbar/Navbar";
+import { NavBar } from "./components/ui/NavBar/NavBar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,6 +19,14 @@ export const metadata: Metadata = {
     "Studio 24 Hair Salon: Haircuts, colour, treatments & styling in Vancouver! Book online now for a new look.",
 };
 
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Treatments", href: "/treatments" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Contact", href: "/contact" },
+];
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,7 +37,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >
-        <Navbar />
+        <NavBar links={navLinks} />
         {children}
       </body>
     </html>
