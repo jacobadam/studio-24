@@ -27,12 +27,12 @@ const variants = {
   secondary: "bg-secondary text-primary",
 } as const;
 
-export default function Button({
+export const Button = ({
   children,
   variant = "primary",
   onClick,
   href,
-}: ButtonProps) {
+}: ButtonProps) => {
   return href ? (
     <Link href={href} className={`${styles} ${variants[variant]}`}>
       {children}
@@ -46,4 +46,4 @@ export default function Button({
       {children}
     </button>
   );
-}
+};
