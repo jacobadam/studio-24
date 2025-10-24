@@ -33,7 +33,11 @@ export const HeroText = ({ heading, subheading, text }: HeroTextProps) => {
         <h2 className="text-center text-4xl font-bold md:text-4xl">
           {subheading}
         </h2>
-        <p className="text-center text-sm md:text-base">{text}</p>
+        {text?.map((p, i) => (
+          <p key={i} className="text-center text-sm md:text-base">
+            {p}
+          </p>
+        ))}
       </motion.div>
     </main>
   );
