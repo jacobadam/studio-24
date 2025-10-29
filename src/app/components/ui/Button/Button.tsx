@@ -18,7 +18,7 @@ interface ActionButtonProps extends BaseProps {
   onClick?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-type ButtonProps = LinkButtonProps | ActionButtonProps;
+export type ButtonProps = LinkButtonProps | ActionButtonProps;
 
 const styles =
   "py-2.5 px-6 text-sm rounded-lg cursor-pointer font-semibold text-center shadow-xs transition-all duration-500";
