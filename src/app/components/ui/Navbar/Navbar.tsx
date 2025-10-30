@@ -16,7 +16,7 @@ export const NavBar = ({ links }: NavBarProps) => {
 
   return (
     <header className="bg-secondary fixed w-full z-20 top-0 left-0 border-b border-secondary-dark h-16">
-      <div className="max-w-screen-xl flex items-center justify-between h-full mx-auto px-4 xl:px-0">
+      <div className="max-w-7xl flex items-center justify-between h-full mx-auto px-4 xl:px-0">
         <Link href="/" className="flex items-center gap-3">
           <div className="relative block md:hidden h-8 w-8">
             <Image
