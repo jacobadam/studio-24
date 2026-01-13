@@ -1,13 +1,12 @@
 "use client";
 
 import React from "react";
-
 import { HeroSection } from "./components/ui/HeroSection/HeroSection";
 import { HeroContent } from "./components/ui/HeroSection/HeroContent";
 
 export default function HomePage(): React.JSX.Element {
-  const handleClick = (): void => {
-    console.log("Booking initiated");
+  const handleBooking = (): void => {
+    window.open("https://salonu2v1.setmore.com", "_blank");
   };
 
   return (
@@ -16,6 +15,18 @@ export default function HomePage(): React.JSX.Element {
         src="/hero-image.webp"
         heading="Elevate Your Personal Style."
         subheading="Experience the art of modern hair styling in the heart of Vancouver."
+        heroButtons={[
+          {
+            children: "Book Now",
+            variant: "secondary",
+            onClick: handleBooking,
+          },
+          {
+            children: "View Services",
+            variant: "primary",
+            href: "/treatments",
+          },
+        ]}
         content={
           <HeroContent
             title="The Studio 24 Philosophy"
@@ -30,20 +41,27 @@ export default function HomePage(): React.JSX.Element {
       <HeroSection
         src="/salon-tools.webp"
         heading="Precision Meets Passion."
-        subheading="Award-winning stylists dedicated to the health and vibrance of your hair."
-        heroButtons={[
-          { children: "Book Now", variant: "secondary", onClick: handleClick },
-          {
-            children: "Our Treatments",
-            variant: "primary",
-            href: "/treatments",
-          },
-        ]}
+        subheading="Expert stylists dedicated to the health and vibrance of your hair."
         content={
           <HeroContent
-            title="Masterful Techniques"
+            title="The Signature Lookbook"
             paragraphs={[
-              "Whether you are looking for a seamless balayage, a bold fashion tone, or a precision geometric cut, our team undergoes continuous training to stay at the forefront of global hair trends.",
+              "Our aesthetic is defined by effortless elegance and healthy, lived-in color. Explore our curated gallery of signature styles designed to inspire your next transformation.",
+              "From sun-kissed balayage to sharp, architectural cuts, we specialize in looks that grow out beautifully and fit your daily lifestyle.",
+            ]}
+          />
+        }
+      />
+
+      <HeroSection
+        src="/basins.webp"
+        heading="The Studio 24 Journey."
+        subheading="A transparent three-step process designed for perfection."
+        content={
+          <HeroContent
+            title="Your Experience"
+            paragraphs={[
+              "1. The Consultation: We begin every visit with a deep-dive into your hair history and goals. 2. The Transformation: Using premium, sustainable products, we execute your look with precision. 3. The Aftercare: We provide a personalized roadmap to maintain your salon-fresh hair at home.",
             ]}
           />
         }
@@ -52,11 +70,7 @@ export default function HomePage(): React.JSX.Element {
       <HeroSection
         src="/salon-chair.webp"
         heading="Luxury in Every Detail."
-        text={[
-          "Bespoke consultations tailored to your face shape and lifestyle.",
-          "Premium Italian leather seating designed for maximum relaxation.",
-          "A curated selection of organic, sustainable products.",
-        ]}
+        subheading="Bespoke consultations tailored to your face shape and lifestyle."
         content={
           <HeroContent
             title="Uncompromising Comfort"
