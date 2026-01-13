@@ -10,7 +10,7 @@ export default function HomePage(): React.JSX.Element {
   };
 
   return (
-    <main className="bg-yellow-50 mt-16">
+    <main className="bg-secondary">
       <HeroSection
         src="/hero-image.webp"
         heading="Elevate Your Personal Style."
@@ -18,12 +18,12 @@ export default function HomePage(): React.JSX.Element {
         heroButtons={[
           {
             children: "Book Now",
-            variant: "secondary",
+            variant: "primary",
             onClick: handleBooking,
           },
           {
             children: "View Services",
-            variant: "primary",
+            variant: "secondary",
             href: "/treatments",
           },
         ]}

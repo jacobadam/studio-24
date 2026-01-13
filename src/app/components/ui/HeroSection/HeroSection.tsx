@@ -31,7 +31,7 @@ export function HeroSection({
           heroButtons={heroButtons}
         />
       </div>
-      <div className="bg-yellow-50">{content}</div>
+      <div className="bg-secondary">{content}</div>
     </section>
   );
 }
