@@ -10,9 +10,13 @@ interface FooterLink {
 
 interface FooterProps {
   links: FooterLink[];
+  onBookingClick: () => void;
 }
 
-export function Footer({ links }: FooterProps): React.JSX.Element {
+export function Footer({
+  links,
+  onBookingClick,
+}: FooterProps): React.JSX.Element {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -38,7 +42,7 @@ export function Footer({ links }: FooterProps): React.JSX.Element {
               transformation today.
             </p>
             <div className="transition-transform active:scale-95">
-              <Button variant="secondary" href="https://salonu2v1.setmore.com">
+              <Button variant="secondary" onClick={onBookingClick}>
                 Book Now
               </Button>
             </div>
@@ -80,7 +84,7 @@ export function Footer({ links }: FooterProps): React.JSX.Element {
             </h3>
             <ul className="text-sm opacity-80 space-y-2">
               <li className="flex justify-between">
-                <span>Mon - Fri</span> <span>9am -6pm</span>
+                <span>Mon - Fri</span> <span>9am - 6pm</span>
               </li>
               <li className="flex justify-between">
                 <span>Sat</span> <span>10am - 6pm</span>
