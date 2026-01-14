@@ -20,7 +20,7 @@ export const NavBar = ({ links, onBookingClick }: NavBarProps) => {
 
   return (
     <header className="bg-primary fixed w-full z-20 top-0 left-0 h-16">
-      <div className="max-w-7xl flex items-center justify-between h-full mx-auto px-4 xl:px-0">
+      <div className="flex items-center justify-between h-full mx-auto px-4">
         <Link href="/" className="flex items-center gap-3">
           <div className="relative h-8 w-32">
             <Image
