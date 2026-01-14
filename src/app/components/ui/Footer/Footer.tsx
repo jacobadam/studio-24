@@ -87,7 +87,7 @@ export function Footer({
                 <span>Mon - Fri</span> <span>9am - 6pm</span>
               </li>
               <li className="flex justify-between">
-                <span>Sat</span> <span>10am - 6pm</span>
+                <span>Sat</span> <span>10am - 5pm</span>
               </li>
               <li className="flex justify-between">
                 <span>Sun</span> <span>Closed</span>
