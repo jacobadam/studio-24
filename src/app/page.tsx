@@ -27,7 +27,7 @@ export default function HomePage(): React.JSX.Element {
             onClick: toggleBooking,
           },
           {
-            children: "View Services",
+            children: "View Treatments",
             variant: "secondary",
             href: "/treatments",
           },
