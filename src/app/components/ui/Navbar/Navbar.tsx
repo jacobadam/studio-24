@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,6 +12,12 @@ interface NavBarProps {
 }
 
 export const NavBar = ({ links, onBookingClick }: NavBarProps) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="bg-primary fixed w-full z-20 top-0 left-0 h-16">
       <div className="max-w-7xl flex items-center justify-between h-full mx-auto px-4 xl:px-0">
@@ -21,7 +28,7 @@ export const NavBar = ({ links, onBookingClick }: NavBarProps) => {
               fill
               priority
               alt="Studio 24 Logo desktop"
-            ></Image>
+            />
           </div>
         </Link>
 
@@ -32,7 +39,6 @@ export const NavBar = ({ links, onBookingClick }: NavBarProps) => {
                 <Link
                   href={link.href}
                   className="block py-2 px-3 text-secondary rounded-sm md:bg-transparent md:p-0"
-                  aria-current="page"
                 >
                   {link.label}
                 </Link>
@@ -41,15 +47,18 @@ export const NavBar = ({ links, onBookingClick }: NavBarProps) => {
           </ul>
         </nav>
 
-        <div className="flex items-center">
-          <Button
-            variant="secondary"
-            onClick={onBookingClick}
-            children={"Book Now"}
-          />
+        <div className="flex items-center gap-2">
+          <div className="hidden md:block">
+            <Button
+              variant="secondary"
+              onClick={onBookingClick}
+              children={"Book Now"}
+            />
+          </div>
           <button
+            onClick={toggleMenu}
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-secondary rounded-lg md:hidden hover:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-secondary-dark"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-secondary rounded-lg md:hidden hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-secondary"
           >
             <span className="sr-only">Open main menu</span>
             <svg
@@ -63,12 +72,42 @@ export const NavBar = ({ links, onBookingClick }: NavBarProps) => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M1 1h15M1 7h15M1 13h15"
+                d={
+                  isMenuOpen ? "M1 1l15 12M1 13L16 1" : "M1 1h15M1 7h15M1 13h15"
+                }
               />
             </svg>
           </button>
         </div>
       </div>
+
+      {isMenuOpen && (
+        <div className="absolute top-16 left-0 w-full bg-primary border-t border-secondary/10 md:hidden">
+          <ul className="flex flex-col p-4 font-medium gap-4">
+            {links?.map((link) => (
+              <li key={link.label}>
+                <Link
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block py-2 px-3 text-secondary"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            <li className="pt-2">
+              <Button
+                variant="secondary"
+                onClick={() => {
+                  onBookingClick();
+                  setIsMenuOpen(false);
+                }}
+                children={"Book Now"}
+              />
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 };
