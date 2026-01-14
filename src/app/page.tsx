@@ -1,12 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+
 import { HeroSection } from "./components/ui/HeroSection/HeroSection";
 import { HeroContent } from "./components/ui/HeroSection/HeroContent";
+import { BookingModal } from "./components/ui/Booking/BookingModal";
 
 export default function HomePage(): React.JSX.Element {
-  const handleBooking = (): void => {
-    window.open("https://salonu2v1.setmore.com", "_blank");
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const setmoreUrl = "https://salonu2v1.setmore.com";
+
+  const toggleBooking = (): void => {
+    setIsBookingOpen((prev) => !prev);
   };
 
   return (
@@ -19,7 +24,7 @@ export default function HomePage(): React.JSX.Element {
           {
             children: "Book Now",
             variant: "primary",
-            onClick: handleBooking,
+            onClick: toggleBooking,
           },
           {
             children: "View Services",
@@ -80,6 +85,12 @@ export default function HomePage(): React.JSX.Element {
             ]}
           />
         }
+      />
+
+      <BookingModal
+        isOpen={isBookingOpen}
+        onClose={toggleBooking}
+        setmoreUrl={setmoreUrl}
       />
     </main>
   );
