@@ -65,11 +65,9 @@ export const NavBar = ({ links, onBookingClick }: NavBarProps) => {
 
         <div className="flex items-center gap-4">
           <div className="hidden md:block">
-            <Button
-              variant="secondary"
-              onClick={onBookingClick}
-              children={"Book Now"}
-            />
+            <Button variant="secondary" onClick={onBookingClick}>
+              Book Now
+            </Button>
           </div>
 
           <button
@@ -113,8 +111,9 @@ export const NavBar = ({ links, onBookingClick }: NavBarProps) => {
                   onBookingClick();
                   setIsMenuOpen(false);
                 }}
-                children={"Book Now"}
-              />
+              >
+                Book now
+              </Button>
             </li>
           </ul>
         </div>
