@@ -1,8 +1,13 @@
-import type { Metadata } from "next";
+"use client";
+
+import React, { useState } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
-import { NavBar } from "./components/ui/NavBar/NavBar";
+
 import "./globals.css";
+
+import { NavBar } from "./components/ui/NavBar/NavBar";
 import { Footer } from "./components/ui/Footer/Footer";
+import { BookingModal } from "./components/ui/Booking/BookingModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,12 +18,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-export const metadata: Metadata = {
-  title: "Studio 24",
-  description:
-    "Studio 24 Hair Salon: Haircuts, colour, treatments & styling in Vancouver! Book online now for a new look.",
-};
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -33,14 +32,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const setmoreUrl = "https://salonu2v1.setmore.com";
+
+  const toggleBooking = (): void => {
+    setIsBookingOpen((prev) => !prev);
+  };
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen mt-16`}
       >
-        <NavBar links={navLinks} />
+        <NavBar links={navLinks} onBookingClick={toggleBooking} />
         {children}
-        <Footer links={navLinks} />
+        <Footer links={navLinks} onBookingClick={toggleBooking} />
+        <BookingModal
+          isOpen={isBookingOpen}
+          onClose={toggleBooking}
+          setmoreUrl={setmoreUrl}
+        />
       </body>
     </html>
   );
