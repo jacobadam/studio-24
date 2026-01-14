@@ -12,7 +12,6 @@ export default function AboutPage(): React.JSX.Element {
           <h1 className="text-5xl font-medium tracking-tighter text-primary md:text-7xl">
             Architecture of <br /> Modern Hair.
           </h1>
-          <div className="mt-12 h-px w-full bg-primary/10" />
         </div>
       </section>
 
