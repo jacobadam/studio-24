@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
+import { usePathname } from "next/navigation";
 import { Button } from "../Button/Button";
 
 interface NavBarProps {
@@ -13,41 +13,57 @@ interface NavBarProps {
 
 export const NavBar = ({ links, onBookingClick }: NavBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header className="bg-primary fixed w-full z-20 top-0 left-0 h-16">
-      <div className="flex items-center justify-between h-full mx-auto px-4">
-        <Link href="/" className="flex items-center gap-3">
+    <header className="fixed inset-x-0 top-0 z-50 h-16 bg-primary shadow-sm">
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4">
+        <Link
+          href="/"
+          className="flex items-center gap-3 transition-opacity hover:opacity-80"
+        >
           <div className="relative h-8 w-32">
             <Image
               src="/studio-24-logo-desktop.svg"
               fill
               priority
-              alt="Studio 24 Logo desktop"
+              alt="Studio 24 Logo"
             />
           </div>
         </Link>
 
-        <nav className="items-center justify-between hidden w-full md:flex md:w-auto">
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg md:flex-row md:mt-0 md:border-0 gap-4">
-            {links?.map((link) => (
-              <li key={link.label}>
-                <Link
-                  href={link.href}
-                  className="block py-2 px-3 text-secondary rounded-sm md:bg-transparent md:p-0"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+        <nav className="hidden items-center justify-between md:flex md:w-auto">
+          <ul className="flex items-center gap-10">
+            {links?.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className={`group relative py-2 text-xs font-bold uppercase tracking-widest transition-colors duration-300 ${
+                      isActive
+                        ? "text-white"
+                        : "text-secondary/70 hover:text-white"
+                    }`}
+                  >
+                    {link.label}
+                    <span
+                      className={`absolute -bottom-1 left-0 h-px bg-secondary transition-all duration-500 ease-in-out ${
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <div className="hidden md:block">
             <Button
               variant="secondary"
@@ -55,47 +71,42 @@ export const NavBar = ({ links, onBookingClick }: NavBarProps) => {
               children={"Book Now"}
             />
           </div>
+
           <button
             onClick={toggleMenu}
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-secondary rounded-lg md:hidden hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-secondary"
+            className="group flex size-10 flex-col items-center justify-center gap-1.5 md:hidden"
+            aria-label="Toggle Menu"
           >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="w-5 h-5"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d={
-                  isMenuOpen ? "M1 1l15 12M1 13L16 1" : "M1 1h15M1 7h15M1 13h15"
-                }
-              />
-            </svg>
+            <span
+              className={`h-px w-6 bg-secondary transition-all duration-300 ${
+                isMenuOpen ? "translate-y-1.75 rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`h-px w-6 bg-secondary transition-all duration-300 ${
+                isMenuOpen ? "-translate-y-1.75 -rotate-45" : ""
+              }`}
+            />
           </button>
         </div>
       </div>
 
       {isMenuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-primary border-t border-secondary/10 md:hidden">
-          <ul className="flex flex-col p-4 font-medium gap-4">
+        <div className="absolute top-16 left-0 min-h-screen w-full border-t border-secondary/5 bg-primary md:hidden">
+          <ul className="flex flex-col gap-8 p-8 pt-12">
             {links?.map((link) => (
               <li key={link.label}>
                 <Link
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 px-3 text-secondary"
+                  className="block text-sm font-medium uppercase tracking-widest text-secondary active:text-white"
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
-            <li className="pt-2">
+            <li className="pt-8">
               <Button
                 variant="secondary"
                 onClick={() => {
