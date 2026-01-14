@@ -7,13 +7,10 @@ import { Button } from "../Button/Button";
 
 interface NavBarProps {
   links?: { label: string; href: string }[];
+  onBookingClick: () => void;
 }
 
-export const NavBar = ({ links }: NavBarProps) => {
-  const clickButton = () => {
-    console.log("hit");
-  };
-
+export const NavBar = ({ links, onBookingClick }: NavBarProps) => {
   return (
     <header className="bg-primary fixed w-full z-20 top-0 left-0 h-16">
       <div className="max-w-7xl flex items-center justify-between h-full mx-auto px-4 xl:px-0">
@@ -47,7 +44,7 @@ export const NavBar = ({ links }: NavBarProps) => {
         <div className="flex items-center">
           <Button
             variant="secondary"
-            onClick={clickButton}
+            onClick={onBookingClick}
             children={"Book Now"}
           />
           <button
