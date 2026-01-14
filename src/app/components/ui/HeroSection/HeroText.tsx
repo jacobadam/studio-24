@@ -36,7 +36,7 @@ export function HeroText({
       <h1 className="mb-2 text-center text-xl md:mb-4 md:text-3xl">
         {heading}
       </h1>
-      <h2 className="mb-4 text-center text-4xl font-bold md:text-6xl">
+      <h2 className="mb-4 text-center text-4xl font-bold md:text-6xl max-w-5xl">
         {subheading}
       </h2>
       <div className="mb-8 max-w-2xl">
