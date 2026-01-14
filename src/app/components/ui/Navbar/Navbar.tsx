@@ -18,15 +18,7 @@ export const NavBar = ({ links }: NavBarProps) => {
     <header className="bg-primary fixed w-full z-20 top-0 left-0 h-16">
       <div className="max-w-7xl flex items-center justify-between h-full mx-auto px-4 xl:px-0">
         <Link href="/" className="flex items-center gap-3">
-          <div className="relative block md:hidden h-8 w-8">
-            <Image
-              src="/studio-24-logo-mobile.svg"
-              fill
-              priority
-              alt="Studio 24 Logo mobile"
-            ></Image>
-          </div>
-          <div className="relative hidden md:block h-8 w-32">
+          <div className="relative h-8 w-32">
             <Image
               src="/studio-24-logo-desktop.svg"
               fill
@@ -37,12 +29,12 @@ export const NavBar = ({ links }: NavBarProps) => {
         </Link>
 
         <nav className="items-center justify-between hidden w-full md:flex md:w-auto">
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-secondary-dark rounded-lg md:flex-row md:mt-0 md:border-0 gap-4">
+          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg md:flex-row md:mt-0 md:border-0 gap-4">
             {links?.map((link) => (
               <li key={link.label}>
                 <Link
                   href={link.href}
-                  className="block py-2 px-3 text-primary rounded-sm md:bg-transparent md:p-0"
+                  className="block py-2 px-3 text-secondary rounded-sm md:bg-transparent md:p-0"
                   aria-current="page"
                 >
                   {link.label}
@@ -60,7 +52,7 @@ export const NavBar = ({ links }: NavBarProps) => {
           />
           <button
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-primary rounded-lg md:hidden hover:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-secondary-dark"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-secondary rounded-lg md:hidden hover:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-secondary-dark"
           >
             <span className="sr-only">Open main menu</span>
             <svg
