@@ -73,7 +73,7 @@ export function Footer({
             <address className="not-italic opacity-80 space-y-2">
               <p>351 Abbott Street</p>
               <p>Vancouver, BC V6B 2L2</p>
-              <p className="pt-4 font-medium text-white">hello@studio24.com</p>
+              <p className="pt-4 font-medium text-white">hello@studio24.ca</p>
               <p>(604) 555-0198</p>
             </address>
           </div>
