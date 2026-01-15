@@ -13,8 +13,10 @@ export function HeroContent({
 }: HeroContentProps): React.JSX.Element {
   return (
     <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
-      <h2 className="col-span-1 text-3xl font-bold md:col-span-4">{title}</h2>
-      <div className="col-span-1 md:col-span-8">
+      <h2 className="text-center md:text-left col-span-1 text-3xl font-bold md:col-span-4">
+        {title}
+      </h2>
+      <div className="col-span-1 md:col-span-8 text-center md:text-left">
         {paragraphs.map((text, index) => (
           <p
             key={index}
