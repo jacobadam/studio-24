@@ -25,7 +25,7 @@ const treatmentDetails = [
 
 export default function TreatmentsPage(): React.JSX.Element {
   return (
-    <main className="min-h-screen bg-secondary">
+    <main className="bg-secondary">
       <section className="mx-auto max-w-7xl px-4 pt-32 pb-16">
         <div className="flex flex-col">
           <span className="mb-4 text-xs font-bold uppercase tracking-widest text-primary/60">
