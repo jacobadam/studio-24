@@ -42,7 +42,7 @@ export default function ContactPage(): React.JSX.Element {
                 <h2 className="text-xs font-bold uppercase tracking-widest opacity-50">
                   Studio Hours
                 </h2>
-                <div className="flex flex-col gap-2 text-sm font-medium uppercase tracking-widest opacity-80">
+                <div className="flex flex-col gap-2 text-sm font-medium tracking-widest opacity-80">
                   <p>Monday — Friday: 09:00 - 18:00</p>
                   <p>Saturday: 10:00 - 17:00</p>
                   <p>Sunday: Closed</p>
