@@ -66,7 +66,8 @@ export default function HomePage(): React.JSX.Element {
           <HeroContent
             title="Your Experience"
             paragraphs={[
-              "1. The Consultation: We begin every visit with a deep-dive into your hair history and goals. 2. The Transformation: Using premium, sustainable products, we execute your look with precision. 3. The Aftercare: We provide a personalized roadmap to maintain your salon-fresh hair at home.",
+              "Every appointment begins with an intimate styling session, where we study your hair's natural movement and health to create a tailored vision that complements your unique features.",
+              "Your transformation is brought to life through precision cutting and botanical-infused rituals, followed by a personalized care guide to ensure your hair stays vibrant and manageable until your next visit.",
             ]}
           />
         }
