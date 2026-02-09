@@ -17,7 +17,7 @@ export default function ContactPage(): React.JSX.Element {
       <section className="bg-primary py-24 text-secondary">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 gap-20 lg:grid-cols-2">
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-12 text-center md:text-left">
               <div className="flex flex-col gap-4">
                 <h2 className="text-xs font-bold uppercase tracking-widest opacity-50">
                   Location
