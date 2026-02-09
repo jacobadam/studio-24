@@ -22,8 +22,8 @@ export function Footer({
   return (
     <footer className="bg-primary pt-24 pb-12 text-secondary">
       <div className="mx-auto max-w-7xl px-4">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-8">
-          <div className="col-span-1 md:col-span-4">
+        <div className="grid grid-cols-1 gap-12 text-center md:grid-cols-12 md:gap-8 md:text-left">
+          <div className="col-span-1 flex flex-col items-center md:col-span-4 md:items-start">
             <Link
               href="/"
               className="mb-6 inline-block transition-opacity hover:opacity-80"
@@ -78,25 +78,28 @@ export function Footer({
             </address>
           </div>
 
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1 md:col-span-3 xl:col-span-2">
             <h3 className="mb-6 text-sm font-bold uppercase tracking-widest text-white">
               Hours
             </h3>
-            <ul className="text-sm opacity-80 space-y-2">
-              <li className="flex justify-between">
-                <span>Mon - Fri</span> <span>9am - 6pm</span>
+            <ul className="text-sm opacity-80 space-y-2 mx-auto max-w-56 md:max-w-none">
+              <li className="flex justify-between gap-4">
+                <span className="whitespace-nowrap">Mon - Fri</span>
+                <span className="whitespace-nowrap">9am - 6pm</span>
               </li>
-              <li className="flex justify-between">
-                <span>Sat</span> <span>10am - 5pm</span>
+              <li className="flex justify-between gap-4">
+                <span className="whitespace-nowrap">Sat</span>
+                <span className="whitespace-nowrap">10am - 5pm</span>
               </li>
-              <li className="flex justify-between">
-                <span>Sun</span> <span>Closed</span>
+              <li className="flex justify-between gap-4">
+                <span className="whitespace-nowrap">Sun</span>
+                <span className="whitespace-nowrap">Closed</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-24 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-50">
+        <div className="mt-24 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-8 text-xs opacity-50">
           <div className="flex flex-col gap-1 text-center md:text-left">
             <p>© {currentYear} Studio 24 Hair Design. All rights reserved.</p>
             <p>
@@ -111,7 +114,7 @@ export function Footer({
               </a>
             </p>
           </div>
-          <div className="flex gap-8">
+          <div className="flex flex-row gap-8">
             <Link
               href="/privacy"
               className="hover:text-white transition-colors"
