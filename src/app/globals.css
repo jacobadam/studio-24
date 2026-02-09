@@ -12,10 +12,13 @@
   --color-highlight: #f0edf7;
   --color-success: #1e3a2f;
   --color-error: #991b1b;
+
+  --font-display: var(--font-playfair), serif;
+  --font-body: var(--font-montserrat), sans-serif;
 }
 
 body {
   background: var(--color-secondary);
   color: var(--color-text);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
 }
