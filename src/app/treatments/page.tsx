@@ -54,7 +54,7 @@ export default function TreatmentsPage(): React.JSX.Element {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-32">
-        <div className="flex flex-col gap-32">
+        <div className="flex flex-col gap-16 md:gap-32">
           {treatmentDetails.map((treatment, index) => (
             <div
               key={treatment.title}
@@ -71,14 +71,14 @@ export default function TreatmentsPage(): React.JSX.Element {
                 />
               </div>
 
-              <div className="flex flex-col gap-6 md:w-1/2 md:px-12">
+              <div className="flex flex-col gap-6 md:w-1/2 md:px-12 text-center md:text-left">
                 <h3 className="text-3xl font-medium tracking-tighter text-primary">
                   {treatment.title}
                 </h3>
                 <p className="text-lg font-light leading-relaxed text-primary/70">
                   {treatment.description}
                 </p>
-                <div className="h-px w-12 bg-primary/20" />
+                <div className="h-px w-12 bg-primary/20 mx-auto md:mx-0" />
               </div>
             </div>
           ))}
