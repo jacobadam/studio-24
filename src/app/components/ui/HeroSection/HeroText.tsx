@@ -33,10 +33,10 @@ export function HeroText({
       ref={targetRef}
       className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center px-4 text-white"
     >
-      <h1 className="mb-2 text-center text-xl md:mb-4 md:text-3xl">
+      <h1 className="font-display mb-2 text-center text-xl md:mb-4 md:text-2xl">
         {heading}
       </h1>
-      <h2 className="mb-4 text-center text-4xl font-bold md:text-6xl max-w-5xl">
+      <h2 className="font-body mb-4 text-center text-2xl font-semibold md:text-4xl max-w-3xl">
         {subheading}
       </h2>
       <div className="mb-8 max-w-2xl">
@@ -47,9 +47,9 @@ export function HeroText({
         ))}
       </div>
       {heroButtons && (
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           {heroButtons.map((button, i) => (
-            <Button key={i} {...button} />
+            <Button key={i} size="lg" {...button} />
           ))}
         </div>
       )}
