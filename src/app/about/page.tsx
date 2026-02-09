@@ -10,7 +10,7 @@ export default function AboutPage(): React.JSX.Element {
             About the Studio
           </span>
           <h1 className="text-5xl font-medium tracking-tighter text-primary md:text-7xl">
-            Architecture of <br /> Modern Hair.
+            Our <br /> Philosophy.
           </h1>
         </div>
       </section>
