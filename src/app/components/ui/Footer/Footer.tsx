@@ -20,7 +20,7 @@ export function Footer({
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary pt-24 pb-12 text-secondary">
+    <footer className="bg-primary pt-24 pb-8 text-secondary">
       <div className="mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 gap-12 text-center md:grid-cols-12 md:gap-8 md:text-left">
           <div className="col-span-1 flex flex-col items-center md:col-span-4 md:items-start">
@@ -103,7 +103,7 @@ export function Footer({
           <div className="flex flex-col gap-1 text-center md:text-left">
             <p>© {currentYear} Studio 24 Hair Design. All rights reserved.</p>
             <p>
-              Designed & Developed by{" "}
+              Designed by{" "}
               <a
                 href="https://www.greenhousewebdesigns.com/"
                 target="_blank"
